@@ -21,6 +21,7 @@ def criar_banco():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             participante_1 TEXT NOT NULL,
             participante_2 TEXT NOT NULL,
+            senha_hash TEXT NOT NULL,
             criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
         )""")
 

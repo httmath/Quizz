@@ -16,9 +16,7 @@
 <body>
 
     <div class="wrap entrada-page">
-
         <header class="topo">
-
             <div class="lockup">
                 <span class="l1">MARATONA</span>
                 <span class="l2">ENEM</span>
@@ -28,9 +26,7 @@
                     </b>
                 </span>
             </div>
-
             <img class="ep" src="{{ url_for('static', filename='img/estudo-play.png') }}" alt="Estudo Play">
-
         </header>
 
 
@@ -44,8 +40,7 @@
                     <span class="lar">Prepare sua</span>
                     <span class="rox">dupla</span>
                 </h1>
-
-                <p class="sub">Cadastre uma nova dupla ou entre usando o número do seu time.</p>
+                <p class="sub">Cadastre uma nova dupla ou entre usando o número do seu time e sua senha.</p>
 
             </section>
 
@@ -55,9 +50,7 @@
             <section class="painel entrada-card">
 
                 <h2>Criar nova dupla</h2>
-
-                <p class="sub">Primeiro acesso? Cadastre os dois participantes.</p>
-
+                <p class="sub">Primeiro acesso? Cadastre os dois participantes e escolha uma senha.</p>
                 <form
                     action="{{ url_for('participantes.entrar') }}"
                     method="post"
@@ -66,15 +59,13 @@
                     <div class="campo">
 
                         <label for="participante_1">Participante 1</label>
-
                         <input
                             type="text"
                             id="participante_1"
                             name="participante_1"
-                            placeholder="Digite o primeiro nome"
+                            placeholder="Digite o nome do primeiro participante"
                             autocomplete="off"
                             required>
-
                     </div>
 
 
@@ -86,17 +77,28 @@
                             type="text"
                             id="participante_2"
                             name="participante_2"
-                            placeholder="Digite o segundo nome"
+                            placeholder="Digite o nome do segundo participante"
                             autocomplete="off"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha_novo_time">Senha</label>
+
+                        <input
+                            type="password"
+                            id="senha_novo_time"
+                            name="senha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6"
+                            autocomplete="new-password"
                             required>
 
                     </div>
-
                     <button class="btn entrada-btn" type="submit">Criar time</button>
-
                 </form>
-
             </section>
+
 
             <!-- ENTRAR EM TIME EXISTENTE -->
 
@@ -104,7 +106,7 @@
 
                 <h2>Já tenho um time</h2>
 
-                <p class="sub">Digite o número recebido no primeiro cadastro.</p>
+                <p class="sub">Digite o número do time e a senha cadastrada.</p>
 
                 <form
                     action="{{ url_for('participantes.entrar_dupla') }}"
@@ -124,19 +126,29 @@
                             inputmode="numeric"
                             autocomplete="off"
                             required>
+                    </div>
 
+
+                    <div class="campo">
+
+                        <label for="senha_time_existente">Senha</label>
+
+                        <input
+                            type="password"
+                            id="senha_time_existente"
+                            name="senha"
+                            placeholder="Digite a senha do time"
+                            autocomplete="current-password"
+                            required>
                     </div>
 
                     <button class="btn entrada-btn" type="submit">Entrar no quiz</button>
                 </form>
             </section>
-
         </main>
 
         <footer class="rodape">Maratona Enem · Estudo Play</footer>
 
     </div>
-
 </body>
-
 </html>
